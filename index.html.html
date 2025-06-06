@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+     </style>
+</head>
+<body>
+  <div class="container">
+    <nav aria-label="Main navigation">
+      <h1>School Dashboard</h1>
+      <ul>
+        <li><a href="#" class="active" data-section="register" tabindex="0">Registration</a></li>
+        <li><a href="#" data-section="reporting" tabindex="0">Reporting Log</a></li>
+      </ul>
+    </nav>
+    <main>
+      <!-- Registration Section -->
+      <section class="dashboard-section active" id="register">
+        <div class="form-section">
+          <h2>Register User</h2>
+          <form id="registrationForm" autocomplete="off" aria-labelledby="Register User">
+            <label for="name">Full Name <span aria-hidden="true" style="color: var(--danger);">*</span></label>
+            <input type="text" id="name" name="name" required aria-required="true" />
+
+            <label for="userType">User Type <span aria-hidden="true" style="color: var(--danger);">*</span></label>
+            <select id="userType" name="userType" required aria-required="true">
+              <option value="">Select...</option>
+              <option value="staff">Staff</option>
+              <option value="non-staff">Non-Staff</option>
+            </select>
+
+            <label for="email">Email Address <span aria-hidden="true" style="color: var(--danger);">*</span></label>
+            <input type="email" id="email" name="email" required aria-required="true" />
+
+            <button type="submit">Register</button>
+          </form>
+        </div>
+        <div class="table-responsive">
+          <h3>Registered Users</h3>
+          <table id="usersTable" aria-label="Registered Users">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>User Type</th>
+                <th>Email</th>
+                <th>Registration Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- Reporting Section -->
+      <section class="dashboard-section" id="reporting">
+        <div class="form-section">
+          <h2>Log Reporting Time</h2>
+          <form id="reportingForm" aria-labelledby="Log Reporting Time">
+            <label for="reportEmail">User Email <span aria-hidden="true" style="color: var(--danger);">*</span></label>
+            <input type="email" id="reportEmail" name="reportEmail" required aria-required="true" />
+
+            <button type="submit">Log Reporting Time</button>
+          </form>
+        </div>
+        <div class="table-responsive">
+          <h3>Reporting Times</h3>
+          <table id="reportingTable" aria-label="Reporting Times">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>User Type</th>
+                <th>Email</th>
+                <th>Reported At</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
